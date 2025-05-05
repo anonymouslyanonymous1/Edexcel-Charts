@@ -85,15 +85,15 @@ def graph():
     )
 
     # Export to HTML
-    fig.write_html("static/tmp/graph.html")
-    file = open("static/tmp/graph.html", "r", encoding="utf-8")
+    fig.write_html("/tmp/graph.html")
+    file = open("/tmp/graph.html", "r", encoding="utf-8")
     html = file.read()
     html = re.sub("<body>", '<body style="background-color:black;">', html)
     html = re.sub('<head><meta charset="utf-8" /></head>', f'<head><meta charset="utf-8" /><title>{unit}</title> \n <link rel="icon" href="../static/icon.svg" type="image/svg+xml"></head>', html)
-    file = open("static/tmp/graph_edit.html", "w", encoding="utf-8")
+    file = open("/tmp/graph_edit.html", "w", encoding="utf-8")
     file.write(html)
 
 
-    return app.send_static_file('static/tmp/graph_edit.html')
+    return app.send_static_file('/tmp/graph_edit.html')
 if __name__ == '__main__':  
    app.run()
