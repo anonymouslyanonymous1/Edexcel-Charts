@@ -22,7 +22,7 @@ def graph():
             data = json.load(data)
             year = re.sub(".json","", file)
             if not data:
-                info.append([year, 0])            
+                continue          
             else:
                 full_ums_mark = data[0]["RAW"]
                 ums_mark = data[0]["UMS"]
@@ -38,7 +38,7 @@ def graph():
             data = json.load(data)
             year = re.sub(".json","", file)
             if not data:
-                info.append([year, 0])
+                continue
             elif grade == "*" and data[0]["GRADE"] != grade:
                 grade="[There is no A* for this unit!]"
             else:
