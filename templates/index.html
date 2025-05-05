@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+        <link rel="icon" href="../static/icon.svg" type="image/svg+xml">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edexcel Charts</title>
+        <style>
+            .cal-sans-regular {
+            font-family: "Cal Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family:"Cal Sans";
+            }
+            
+            body {
+                background: black;
+                line-height: 1.6;
+                padding: 2rem;
+            }
+            
+            .container {
+                max-width: 1000px;
+                margin: 0 auto;
+                background-color: #000000;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+            }
+            
+            h1 {
+                text-align: center;
+                margin-bottom: 2rem;
+                color: var(--dark);
+                font-weight: 600;
+                color: white;
+            }
+            
+            .radio-section {
+                margin-bottom: 2rem;
+            }
+            
+            .radio-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .radio-option {
+                position: relative;
+                background-color: rgb(0, 0, 0);
+                border: 2px solid #ddd;
+                border-radius: 8px;
+                padding: 1rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .radio-option:hover {
+                border-color: #c0fa00;
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            }
+            
+            .radio-option input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+            }
+            
+            .radio-option label {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                cursor: pointer;
+                font-weight: 500;
+                color: white;
+            }
+            
+            .radio-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 0.75rem;
+                transition: all 0.3s ease;
+                background-color: #f0f2f5;
+                color: grey
+            }
+            
+            .radio-option input[type="radio"]:checked + label .radio-icon {
+                background-color: #c0fa00;
+                color: white;
+            }
+            
+            .radio-option input[type="radio"]:checked + label {
+                color: #c0fa00;
+            }
+            
+            .radio-option input[type="radio"]:checked ~ .check-circle {
+                opacity: 1;
+                transform: scale(1);
+            }
+            
+            .radio-option input[type="radio"]:checked ~ .radio-option {
+                border-color: #c0fa00;
+            }
+            
+            .check-circle {
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                width: 24px;
+                height: 24px;
+                background-color: #c0fa00;
+                border-radius: 50%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transform: scale(0.5);
+                transition: all 0.3s ease;
+            }
+            
+            .dropdown-section {
+                margin-bottom: 2rem;
+            }
+            
+            .dropdown-container {
+                display: none;
+                padding: 1.25rem;
+                background-color: #000000;
+                border-radius: 8px;
+                margin-bottom: 1rem;
+                border-left: 4px solid #c0fa00;
+                animation: fadeIn 0.3s ease;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            .dropdown-container.active {
+                display: block;
+            }
+            
+            .dropdown-container h3 {
+                margin-bottom: 1rem;
+                color: white;
+                font-weight: 500;
+            }
+            
+            select {
+                width: 100%;
+                padding: 0.75rem 1rem;
+                border: 1px solid #ddd;
+                border-radius: 6px;
+                background-color: white;
+                font-size: 1rem;
+                cursor: pointer;
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%233a86ff' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: calc(100% - 15px) center;
+                transition: all 0.3s ease;
+            }
+            
+            select:focus {
+                outline: none;
+                border-color: #c0fa00;
+                box-shadow: 0 0 0 3px #c0fa00;
+            }
+            
+            .buttons-section {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+            }
+            
+            @media (max-width: 768px) {
+                .buttons-section {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            
+            button {
+                padding: 0.875rem 1.5rem;
+                border: none;
+                border-radius: 6px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            button.g1 {
+                background-color: #3b8d54;
+                color: white;
+            }
+            
+            button.g2 {
+                background-color: #3b8d54;
+                color: white;
+            }
+            
+            button.g3 {
+                background-color: #3b8d54;
+                color: white;
+            }
+            
+            button.g4 {
+                background-color: #bc853d;
+                color: white;
+            }
+            
+            button.g5 {
+                background-color: #bc853d;
+                color: white;
+            }
+            
+            button.g6 {
+                background-color: #bc3d3d;
+                color: white;
+            }
+            
+            button.g7 {
+                background-color: #bc3d3d;
+                color: white;
+            }
+            
+            button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            
+            button:active {
+                transform: translateY(0);
+            }
+            
+            button i {
+                font-size: 1.25rem;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <body>
+        <form class="container" action="/graph" method="get">
+            <h1>Graphs of Marks over the years</h1>
+            
+            <div class="radio-section">
+                <div class="radio-container">
+                    <div class="radio-option">
+                        <input required type="radio" id="option1" name="options" value="Chemistry (2018)">
+                        <label for="option1">
+                            <div class="radio-icon">
+                                <i class="fa-solid fa-flask"></i>
+                            </div>
+                            Chemistry
+                        </label>
+                        <div class="check-circle">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="option2" name="options" value="Physics (2018)">
+                        <label for="option2">
+                            <div class="radio-icon">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            Physics
+                        </label>
+                        <div class="check-circle">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="option3" name="options" value="Mathematics">
+                        <label for="option3">
+                            <div class="radio-icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                            Mathematics
+                        </label>
+                        <div class="check-circle">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="radio-option">
+                        <input type="radio" id="option4" name="options" value="Further Mathematics">
+                        <label for="option4">
+                            <div class="radio-icon">
+                                <i class="fa-solid fa-square-root-variable"></i>
+                            </div>
+                            Further Mathematics
+                        </label>
+                        <div class="check-circle">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dropdown-section">
+                <div id="dropdown1" class="dropdown-container">
+                    <h3>Chemistry Modules: </h3>
+                    <select name="unit" id="select1">
+                        <option value="" selected disabled>Choose an unit</option>
+                        <option value="WCH11/01 - Structure, Bonding and Introduction to Organic Chemistry">WCH11/01 - Structure, Bonding and Introduction to Organic Chemistry</option>
+                        <option value="WCH12/01 - Energetics, Group Chemistry, Halogenoalkanes and Alcohols">WCH12/01 - Energetics, Group Chemistry, Halogenoalkanes and Alcohols</option>
+                        <option value="WCH13/01 - Practical Skills in Chemistry I">WCH13/01 - Practical Skills in Chemistry I</option>
+                        <option value="WCH14/01 - Rates, Equilibria and Further Organic Chemistry">WCH14/01 - Rates, Equilibria and Further Organic Chemistry</option>
+                        <option value="WCH15/01 - Unit 5 Transition Metals and Organic Nitrogen Chemistry">WCH15/01 - Unit 5 Transition Metals and Organic Nitrogen Chemistry</option>
+                        <option value="WCH16/01 - Unit 6 Practical Skills in Chemistry II">WCH16/01 - Unit 6 Practical Skills in Chemistry II</option>
+                    </select>
+                </div>
+                
+                <div id="dropdown2" class="dropdown-container">
+                    <h3>Physics Modules: </h3>
+                    <select name="unit" id="select2">
+                        <option value="" selected disabled>Choose an unit</option>
+                        <option value="WPH11/01 - Mechanics and Materials">WPH11/01 - Mechanics and Materials</option>
+                        <option value="WPH12/01 - Waves and Electricity">WPH12/01 - Waves and Electricity</option>
+                        <option value="WPH13/01 - Practical Skills in Physics I">WPH13/01 - Practical Skills in Physics I</option>
+                        <option value="WPH14/01 - Further Mechanics, Fields and Particles">WPH14/01 - Further Mechanics, Fields and Particles</option>
+                        <option value="WPH15/01 - Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology">WPH15/01 - Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology</option>
+                        <option value="WPH16/01 - Unit 6 Practical Skills in Physics II">WPH16/01 - Unit 6 Practical Skills in Physics II</option>
+                    </select>
+                </div>
+                
+                <div id="dropdown3" class="dropdown-container">
+                    <h3>Math Modules: </h3>
+                    <select name="unit" id="select3">
+                        <option value="" selected disabled>Choose an unit</option>
+                        <option value="WMA11/01 - Pure Mathematics P1 (New)">WMA11/01 - Pure Mathematics P1 (New)</option>
+                        <option value="WMA12/01 - Pure Mathematics P2 (New)">WMA12/01 - Pure Mathematics P2 (New)</option>
+                        <option value="WMA13/01 - Pure Mathematics P3">WMA13/01 - Pure Mathematics P3</option>
+                        <option value="WMA14/01 - P4 Pure Mathematics 4">WMA14/01 - P4 Pure Mathematics 4</option>
+                    </select>
+                </div>
+                
+                <div id="dropdown4" class="dropdown-container">
+                    <h3>Further Math Modules: </h3>
+                    <select name="unit" id="select4">
+                        <option value="" selected disabled>Choose an unit</option>
+                        <option value="WFM01/01 - Further Pure Mathematics FP1">WFM01/01 - Further Pure Mathematics FP1</option>
+                        <option value="WFM02/01 - Further Pure Mathematics FP2">WFM02/01 - Further Pure Mathematics FP2</option>
+                        <option value="WFM03/01 - Further Pure Mathematics FP3">WFM03/01 - Further Pure Mathematics FP3</option>
+                        <option value="WST01/01 - Statistics S1">WST01/01 - Statistics S1</option>
+                        <option value="WST02/01 - Statistics S2">WST02/01 - Statistics S2</option>
+                        <option value="WST03/01 - Statistics S3">WST03/01 - Statistics S3</option>
+                        <option value="WME01/01 - Mechanics M1">WME01/01 - Mechanics M1</option>
+                        <option value="WME02/01 - Mechanics M2">WME02/01 - Mechanics M2</option>
+                        <option value="WME03/01 - Mechanics M3">WME03/01 - Mechanics M3</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="buttons-section">
+                <button name="grade" class="g1" type="submit" value="full">
+                    <i class="fa-solid fa-bolt"></i>
+                    Full UMS
+                </button>
+                <button name="grade" class="g2" type="submit" value="*">
+                    <i class="fa-solid fa-star"></i>
+                    Grade: A*
+                </button>
+                <button name="grade" class="g3" type="submit" value="A">
+                    <i class="fa-solid fa-circle-up"></i>
+                    Grade: A
+                </button>
+                <button name="grade" class="g4" type="submit" value="B">
+                    <i class="fa-regular fa-hourglass-half"></i>
+                    Grade: B
+                </button>
+                <button name="grade" class="g5" type="submit" value="C">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    Grade: C
+                </button>
+                <button name="grade" class="g6" type="submit" value="D">
+                    <i class="fa-solid fa-face-meh"></i>
+                    Grade: D
+                </button>
+                <button name="grade" class="g7" type="submit" value="E">
+                    <i class="fa-solid fa-face-frown"></i>
+                    Grade: E
+                </button>
+            </div>
+        </form>
+
+        <script>
+            // JavaScript to handle radio button selection and show corresponding dropdown
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            const dropdowns = document.querySelectorAll('.dropdown-container');
+            const allSelects = document.querySelectorAll('select');
+
+            radioButtons.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    // Hide all dropdowns first
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                    allSelects.forEach(select => {
+                    select.required = false;
+                    });
+                    
+                    // Show the corresponding dropdown
+                    const optionNumber = this.id.replace('option', '');
+                    const targetDropdown = document.getElementById('dropdown' + optionNumber);
+                    targetDropdown.classList.add('active');
+
+                    const targetSelect = document.getElementById('select' + optionNumber);
+                    targetSelect.required = true;
+                });
+            });
+        </script>
+    </body>
+</html>
