@@ -90,10 +90,6 @@ def graph():
     html = file.read()
     html = re.sub("<body>", '<body style="background-color:black;">', html)
     html = re.sub('<head><meta charset="utf-8" /></head>', f'<head><meta charset="utf-8" /><title>{unit}</title> \n <link rel="icon" href="../static/icon.svg" type="image/svg+xml"></head>', html)
-    file = open("/tmp/graph_edit.html", "w", encoding="utf-8")
-    file.write(html)
-
-
-    return app.send_static_file('/tmp/graph_edit.html')
+    return html, 200, {'Content-Type': 'text/html'}
 if __name__ == '__main__':  
    app.run()
