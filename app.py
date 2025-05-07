@@ -72,7 +72,7 @@ def graph():
 
     # Layout settings
     fig.update_layout(
-        title=f"Goal: {grade}",
+        title=f"Goal: {grade} for {unit}",
         xaxis_title="Year",
         yaxis_title=f"Minimum Marks for {grade}",
         hovermode="x unified",
