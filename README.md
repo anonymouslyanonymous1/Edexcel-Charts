@@ -10,7 +10,7 @@
 Works **both** on mobile 📱 and desktop 🖥️
 
 ## Backend
-- Like [Edexcel Finder](https://github.com/anonymouslyanonymous1/Edexcel-Finder), Flask is the library that I used as the backbone for the project
+- Like [Marking Companion](https://github.com/anonymouslyanonymous1/Marking-Companion) & [Edexcel Finder](https://github.com/anonymouslyanonymous1/Edexcel-Finder), Flask is the library that I used as the backbone for the project
 - All the UMS data is stored as JavaScript Objects
 - Plotly to generate the graph
 - For a detailed explanation of the data collection, check out the badge mentioned at the top
