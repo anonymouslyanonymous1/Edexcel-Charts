@@ -16,7 +16,7 @@ Works **both** on mobile 📱 and desktop 🖥️
 - Raw HTML and CSS has been used
 
 ## List of Subjects and Units available
-#### Grades available for all: A* (if exists), A, B, C, D, E and most importantly *Full UMS*
+##### Grades available for all: A* (if exists), A, B, C, D, E and most importantly *Full UMS*
 
 ##### Chemistry
 
