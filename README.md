@@ -1,6 +1,7 @@
 ![image](static/bg.png)
 # [Edexcel Charts](https://edexcel-charts.vercel.app/)
-
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Link](https://img.shields.io/badge/Detailed_Overview-Edexcel--Charts-c0fa00.svg)](https://github.com/anonymouslyanonymous1/Data-Extraction-and-Analysis/tree/main/Edexcel%20Charts)
 ## Use Case
 - Can be used to see how the UMS has varied over the years
 - The trends can be used to predict future trends
@@ -12,7 +13,7 @@ Works **both** on mobile 📱 and desktop 🖥️
 - Like [Edexcel Finder](https://github.com/anonymouslyanonymous1/Edexcel-Finder), Flask is the library that I used as the backbone for the project
 - All the UMS data is stored as JavaScript Objects
 - Plotly to generate the graph
-- For a detailed explanation of the data collection, check out [![Link](https://img.shields.io/badge/Detailed_Overview-Edexcel--Charts-c0fa00.svg)](https://github.com/anonymouslyanonymous1/Data-Extraction-and-Analysis/tree/main/Edexcel%20Charts)
+- For a detailed explanation of the data collection, check out the badge mentioned at the top
 ## Frontend
 - Raw HTML and CSS has been used
 
