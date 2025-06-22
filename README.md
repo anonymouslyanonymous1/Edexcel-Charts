@@ -16,9 +16,9 @@ Works **both** on mobile 📱 and desktop 🖥️
 - Raw HTML and CSS has been used
 
 ## List of Subjects and Units available
-> Grades available for all: A* (if exists), A, B, C, D, E and most importantly **Full UMS**
+#### Grades available for all: A* (if exists), A, B, C, D, E and most importantly **Full UMS**
 
-> Chemistry
+##### Chemistry
 
 1. **WCH11/01** – Structure, Bonding and Introduction to Organic Chemistry
 2. **WCH12/01** – Energetics, Group Chemistry, Halogenoalkanes and Alcohols
@@ -27,7 +27,7 @@ Works **both** on mobile 📱 and desktop 🖥️
 5. **WCH15/01** – Unit 5 Transition Metals and Organic Nitrogen Chemistry
 6. **WCH16/01** – Unit 6 Practical Skills in Chemistry II
 
-> Physics
+##### Physics
 
 1. **WPH11/01** – Mechanics and Materials
 2. **WPH12/01** – Waves and Electricity
@@ -36,14 +36,14 @@ Works **both** on mobile 📱 and desktop 🖥️
 5. **WPH15/01** – Unit 5 Thermodynamics, Radiation, Oscillations and Cosmology
 6. **WPH16/01** – Unit 6 Practical Skills in Physics II
 
-> Mathematics
+##### Mathematics
 
 1. **WMA11/01** – Pure Mathematics P1 (New)
 2. **WMA12/01** – Pure Mathematics P2 (New)
 3. **WMA13/01** – Pure Mathematics P3
 4. **WMA14/01** – P4 Pure Mathematics 4
 
-> Further Mathematics
+##### Further Mathematics
 
 1. **WFM01/01** – Further Pure Mathematics FP1
 2. **WFM02/01** – Further Pure Mathematics FP2
@@ -56,7 +56,7 @@ Works **both** on mobile 📱 and desktop 🖥️
 9. **WME03/01** – Mechanics M3
 10. **WDM11/01** – Decision Mathematics D1 (New)
 
-> Biology
+##### Biology
 
 1. **WBI11/01** – Molecules, Diet, Transport and Health
 2. **WBI12/01** – Cells, Development, Biodiversity and Conservation
