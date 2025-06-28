@@ -89,7 +89,7 @@ def graph():
     file = open("/tmp/graph.html", "r", encoding="utf-8")
     html = file.read()
     html = re.sub("<body>", '<body style="background-color:black;">', html)
-    html = re.sub('<head><meta charset="utf-8" /></head>', f'<head><meta charset="utf-8" /><title>{unit}</title> \n <link rel="icon" href="../static/icon.svg" type="image/svg+xml"></head>', html)
+    html = re.sub('<head><meta charset="utf-8" /></head>', f'<head><meta charset="utf-8" /><title>{unit}</title> \n <link rel="icon" href="../static/iconn.png" type="image/svg+xml"></head>', html)
     return html, 200, {'Content-Type': 'text/html'}
 if __name__ == '__main__':  
    app.run()
