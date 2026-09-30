@@ -1,5 +1,5 @@
 ![image](static/bg.png)
-# [Edexcel Charts](https://edexcel-charts.vercel.app/)
+# [Edexcel Charts](https://charts.alevels.me/)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Link](https://img.shields.io/badge/Detailed_Overview-Edexcel--Charts-c0fa00.svg)](https://github.com/anonymouslyanonymous1/Data-Extraction-and-Analysis/tree/main/Edexcel%20Charts) <br>
 <img src="https://skillicons.dev/icons?i=python,flask,html,css&theme=dark" /> 
